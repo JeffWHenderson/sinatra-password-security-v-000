@@ -28,7 +28,8 @@ class ApplicationController < Sinatra::Base
 
 
 	get "/login" do
-		erb :login
+		params
+		#erb :login
 	end
 
 	post "/login" do
@@ -46,8 +47,7 @@ class ApplicationController < Sinatra::Base
 		if logged_in?
 			erb :success
 		else
-			erb :success
-			#redirect "/login"
+			redirect "/login"
 		end
 	end
 
